@@ -14,4 +14,3 @@
   apt_repository:
     repo: "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ ansible_distribution_release }} main"
     filename: atlassian-hipchat4
-
