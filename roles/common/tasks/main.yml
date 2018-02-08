@@ -1,18 +1,4 @@
-- name: Install packages
-  apt:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-  - libappindicator1
-  - libindicator7
-  - git
-  - python-cairo
-  - python-gobject-2
-  - python-gtk2
-  - keepassx
-  - geany
-  - openjdk-8-jdk
-  - htop
+- include: repositories.yml
+- include: packages.yml
 
-# TODO: install chrome
 # TODO: install dropbox
