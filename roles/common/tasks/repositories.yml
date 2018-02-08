@@ -1,4 +1,4 @@
-
+---
 - name: Add Atlassian repository key
   apt_key:
     id: CC64091D
