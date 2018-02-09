@@ -5,6 +5,12 @@
     url: https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public
     state: present
 
+- name: Add Docker repository key
+  apt_key:
+    id: 0EBFCD88
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
 - name: Add google repository
   apt_repository:
     repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
@@ -14,3 +20,8 @@
   apt_repository:
     repo: "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ ansible_distribution_release }} main"
     filename: atlassian-hipchat4
+
+- name: Add docker repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    filename: docker-ce
