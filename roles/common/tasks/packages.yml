@@ -7,13 +7,14 @@
   with_items:
     - libappindicator1
     - libindicator7
-    - git
     - python-cairo
     - python-gobject-2
     - python-gtk2
+    - openjdk-8-jdk
     - keepassx
     - geany
-    - openjdk-8-jdk
+    - git
+    - tig
     - htop
     - mc
     - compizconfig-settings-manager
@@ -21,3 +22,4 @@
     - google-chrome-stable
     - docker-ce
     - virtualbox-5.2
+    - vagrant
