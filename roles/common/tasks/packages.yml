@@ -22,8 +22,17 @@
     - google-chrome-stable
     - docker-ce
     - virtualbox-5.2
+    - python-pip
 
 - name: Install vagrant package
   apt:
     deb: "https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.deb"
     state: present
+
+- name: install pip packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - awscli
+    - aws-adfs
