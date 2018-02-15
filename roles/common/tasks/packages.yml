@@ -15,6 +15,7 @@
     - geany
     - git
     - tig
+    - vim
     - htop
     - mc
     - compizconfig-settings-manager
@@ -27,6 +28,11 @@
 - name: Install vagrant package
   apt:
     deb: "https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.deb"
+    state: present
+
+- name: Install Skype package
+  apt:
+    deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
 
 - name: install pip packages
