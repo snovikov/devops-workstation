@@ -24,6 +24,8 @@
     - docker-ce
     - virtualbox-5.2
     - python-pip
+    - mysql-client
+    - mysql-workbench
 
 - name: Install vagrant package
   apt:
