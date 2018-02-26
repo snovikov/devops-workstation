@@ -23,7 +23,6 @@
     - hipchat4
     - google-chrome-stable
     - docker-ce
-    - virtualbox-5.2
     - python-pip
 
 - name: Install vagrant package

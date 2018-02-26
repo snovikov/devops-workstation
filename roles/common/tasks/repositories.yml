@@ -37,8 +37,3 @@
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     filename: docker-ce
-
-- name: Add virtualbox repository
-  apt_repository:
-    repo: "deb https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
-    filename: virtualbox

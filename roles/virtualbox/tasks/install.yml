@@ -1,0 +1,11 @@
+---
+- name: Add virtualbox repository
+  apt_repository:
+    repo: "deb https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+    filename: virtualbox
+
+- name: Install virtualbox packages
+  apt:
+    name: "virtualbox-5.2"
+    state: latest
+    update_cache: true
