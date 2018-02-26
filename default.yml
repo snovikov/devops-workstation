@@ -5,4 +5,5 @@
   become_user: root
   roles:
     - common
+    - mysql-client
     - atom
