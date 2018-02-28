@@ -22,7 +22,6 @@
     - compizconfig-settings-manager
     - hipchat4
     - google-chrome-stable
-    - docker-ce
     - python-pip
 
 - name: Install vagrant package

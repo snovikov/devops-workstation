@@ -6,5 +6,6 @@
   roles:
     - common
     - mysql-client
+    - docker
     - virtualbox
     - atom
