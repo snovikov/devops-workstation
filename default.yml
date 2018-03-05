@@ -4,7 +4,7 @@
   become_method: sudo
   become_user: root
   roles:
-    - common
+    - {role: common, tags: common}
     - mysql-client
     - docker
     - virtualbox
