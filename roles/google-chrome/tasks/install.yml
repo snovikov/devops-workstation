@@ -1,0 +1,11 @@
+---
+- name: Add google repository
+  apt_repository:
+    repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: google-chrome-stable
+
+- name: Install packages
+  apt:
+    name: "google-chrome-stable"
+    state: latest
+    update_cache: true

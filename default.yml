@@ -7,6 +7,7 @@
     - {role: common, tags: common}
     - mysql-client
     - docker
+    - {role: google-chrome, tags: google-chrome}
     - {role: virtualbox, tags: virtualbox}
     - {role: hipchat, tags: hipchat}
     - atom

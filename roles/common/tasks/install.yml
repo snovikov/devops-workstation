@@ -1,9 +1,4 @@
 ---
-- name: Add google repository
-  apt_repository:
-    repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
-    filename: google-chrome-stable
-
 - name: Install packages
   apt:
     name: "{{ item }}"
@@ -25,7 +20,6 @@
     - mc
     - whois
     - compizconfig-settings-manager
-    - google-chrome-stable
     - python-pip
 
 - name: Install vagrant package
