@@ -1,10 +1,4 @@
 ---
-- name: Add Atlassian repository key
-  apt_key:
-    id: CC64091D
-    url: https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public
-    state: present
-
 - name: Add Oracle vbox 2016 repository key
   apt_key:
     id: 2980AECF
@@ -21,11 +15,6 @@
   apt_repository:
     repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
     filename: google-chrome-stable
-
-- name: Add hipchat repository
-  apt_repository:
-    repo: "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ ansible_distribution_release }} main"
-    filename: atlassian-hipchat4
 
 - name: Install packages
   apt:
@@ -48,7 +37,6 @@
     - mc
     - whois
     - compizconfig-settings-manager
-    - hipchat4
     - google-chrome-stable
     - python-pip
 

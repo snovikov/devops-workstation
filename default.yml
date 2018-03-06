@@ -8,4 +8,5 @@
     - mysql-client
     - docker
     - virtualbox
+    - {role: hipchat, tags: hipchat}
     - atom
