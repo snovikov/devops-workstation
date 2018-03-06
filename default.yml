@@ -7,6 +7,6 @@
     - {role: common, tags: common}
     - mysql-client
     - docker
-    - virtualbox
+    - {role: virtualbox, tags: virtualbox}
     - {role: hipchat, tags: hipchat}
     - atom

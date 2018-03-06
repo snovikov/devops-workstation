@@ -1,16 +1,4 @@
 ---
-- name: Add Oracle vbox 2016 repository key
-  apt_key:
-    id: 2980AECF
-    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
-    state: present
-
-- name: Add Oracle vbox repository key
-  apt_key:
-    id: 98AB5139
-    url: https://www.virtualbox.org/download/oracle_vbox.asc
-    state: present
-
 - name: Add google repository
   apt_repository:
     repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
