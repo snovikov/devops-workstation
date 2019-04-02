@@ -9,4 +9,5 @@
     - {role: docker, tags: docker}
     - {role: google-chrome, tags: google-chrome}
     - {role: virtualbox, tags: virtualbox}
+    - {role: vagrant, tags: vagrant}
     - {role: atom, tags: atom}
