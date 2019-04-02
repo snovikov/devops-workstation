@@ -10,6 +10,8 @@
     - python-cairo
     - python-gobject-2
     - python-gtk2
+    - python-pip
+    - python-apt
     - openjdk-8-jdk
     - keepassx
     - geany
@@ -19,8 +21,6 @@
     - htop
     - mc
     - whois
-    - compizconfig-settings-manager
-    - python-pip
 
 - name: Install vagrant package
   apt:
