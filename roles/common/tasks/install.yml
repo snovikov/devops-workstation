@@ -29,3 +29,14 @@
   with_items:
     - awscli
     - aws-adfs
+
+# TODO: use after migrating to ansible 2.8
+- name: Install PyCharm
+#  snap:
+#    name: pycharm-community
+#    classic: yes
+#    state: present
+  shell: snap install pycharm-community --classic
+  args:
+    creates: /snap/bin/pycharm-community
+
