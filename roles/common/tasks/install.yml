@@ -28,13 +28,19 @@
     - aws-adfs
     state: latest
 
-- name: Install PyCharm
+- name: Install {{ item }}
 # TODO: use after migrating to ansible 2.8
 #  snap:
-#    name: pycharm-community
+#    name: {{ item }}
 #    classic: yes
 #    state: present
-  shell: snap install pycharm-community --classic
+  shell: "snap install {{ item }} --classic"
   args:
-    creates: /snap/bin/pycharm-community
-
+    creates: "/snap/bin/{{ item }}"
+  with_items:
+  - pycharm-community
+  - slack
+  - kops
+  - kubectl
+  - jq
+  - yq
