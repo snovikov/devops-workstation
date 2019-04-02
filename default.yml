@@ -9,5 +9,4 @@
     - {role: docker, tags: docker}
     - {role: google-chrome, tags: google-chrome}
     - {role: virtualbox, tags: virtualbox}
-    - {role: hipchat, tags: hipchat}
     - {role: atom, tags: atom}
