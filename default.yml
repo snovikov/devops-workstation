@@ -5,9 +5,9 @@
   become_user: root
   roles:
     - {role: common, tags: common}
-    - {role: mysql-client, tags: mysql-client}
-    - {role: docker, tags: docker}
     - {role: google-chrome, tags: google-chrome}
+    - {role: docker, tags: docker}
+    - {role: mysql-client, tags: mysql-client}
     - {role: virtualbox, tags: virtualbox}
     - {role: vagrant, tags: vagrant}
     - {role: atom, tags: atom}
