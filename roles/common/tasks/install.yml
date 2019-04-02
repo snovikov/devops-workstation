@@ -1,10 +1,7 @@
 ---
 - name: Install packages
   apt:
-    name: "{{ item }}"
-    state: latest
-    update_cache: true
-  with_items:
+    name:
     - python-pip
     - python-apt
     - openjdk-8-jdk
@@ -16,6 +13,8 @@
     - htop
     - mc
     - whois
+    state: latest
+    update_cache: true
 
 - name: Install Skype package
   apt:
@@ -24,14 +23,13 @@
 
 - name: install pip packages
   pip:
-    name: "{{ item }}"
-    state: latest
-  with_items:
+    name:
     - awscli
     - aws-adfs
+    state: latest
 
-# TODO: use after migrating to ansible 2.8
 - name: Install PyCharm
+# TODO: use after migrating to ansible 2.8
 #  snap:
 #    name: pycharm-community
 #    classic: yes
