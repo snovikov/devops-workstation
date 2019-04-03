@@ -13,6 +13,8 @@
     - htop
     - mc
     - whois
+    - curl
+    - network-manager-openvpn-gnome
     state: latest
     update_cache: true
 
