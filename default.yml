@@ -10,4 +10,5 @@
     - {role: mysql-client, tags: mysql-client}
     - {role: virtualbox, tags: virtualbox}
     - {role: vagrant, tags: vagrant}
+    - {role: terraform, tags: terraform}
     - {role: atom, tags: atom}
