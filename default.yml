@@ -5,6 +5,7 @@
   become_user: root
   roles:
     - {role: common, tags: common}
+    - {role: monitoring, tags: monitoring}
     - {role: google-chrome, tags: google-chrome}
     - {role: docker, tags: docker}
     - {role: mysql-client, tags: mysql-client}
