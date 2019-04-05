@@ -8,7 +8,3 @@
     state: latest
     update_cache: true
   register: sensor_install
-
-- name: Detect sensors
-  command: sensors-detect
-  when: sensor_install is changed
