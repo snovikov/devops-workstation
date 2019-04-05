@@ -15,6 +15,7 @@
     - whois
     - curl
     - network-manager-openvpn-gnome
+    - mokutil
     state: latest
     update_cache: true
 
