@@ -1,5 +1,5 @@
 ---
-- name: Install common packages
+- name: Install common deb packages
   apt:
     name:
     - python-pip
@@ -27,8 +27,10 @@
 - name: install pip packages
   pip:
     name:
+    - boto
     - awscli
     - aws-adfs
+    - cfn_flip
     state: latest
 
 - name: Install {{ item }}
