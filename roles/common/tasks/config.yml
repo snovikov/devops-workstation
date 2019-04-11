@@ -1,4 +1,7 @@
 ---
 # TODO: add history configuration in .bashrc
+
 # TODO: add adfs configuration in .bashrc
+
 # TODO: docker allow non-root user
+# $ sudo gpasswd -a $USER docker
