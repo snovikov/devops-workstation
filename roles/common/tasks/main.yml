@@ -1,5 +1,5 @@
 ---
 - include_tasks: install.yml
   tags: common-install
-
-# TODO: install dropbox
+- include_tasks: config.yml
+  tags: common-config

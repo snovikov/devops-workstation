@@ -19,11 +19,6 @@
     state: latest
     update_cache: true
 
-- name: Install Skype package
-  apt:
-    deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
-    state: present
-
 - name: install pip packages
   pip:
     name:
@@ -49,3 +44,10 @@
   - kubectl
   - jq
   - yq
+
+- name: Install Skype package
+  apt:
+    deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
+    state: present
+
+# TODO: install dropbox
