@@ -1,0 +1,4 @@
+---
+# TODO: docker allow non-root user
+# $ sudo gpasswd -a $USER docker
+# $ newgrp docker
