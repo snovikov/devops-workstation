@@ -12,4 +12,5 @@
     - {role: virtualbox, tags: virtualbox}
     - {role: vagrant, tags: vagrant}
     - {role: terraform, tags: terraform}
+    - {role: travis, tags: travis}
     - {role: atom, tags: atom}
