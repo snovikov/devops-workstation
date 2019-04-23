@@ -16,6 +16,7 @@
     - curl
     - network-manager-openvpn-gnome
     - mokutil
+    - software-properties-common
     state: latest
     update_cache: true
 
