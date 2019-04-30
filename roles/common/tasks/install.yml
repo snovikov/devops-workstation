@@ -17,6 +17,8 @@
     - network-manager-openvpn-gnome
     - mokutil
     - software-properties-common
+    - nodejs
+    - npm
     state: latest
     update_cache: true
 
@@ -27,6 +29,8 @@
     - awscli
     - aws-adfs
     - cfn_flip
+    - openshift
+    - yamllint
     state: latest
 
 - name: Install {{ item }}
@@ -45,10 +49,12 @@
   - kubectl
   - jq
   - yq
+  - go
 
 - name: Install Skype package
   apt:
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
 
+# sudo npm install -g aws-azure-login --unsafe-perm
 # TODO: install dropbox
