@@ -2,6 +2,7 @@
 - name: Install common deb packages
   apt:
     name:
+    - net-tools
     - python-pip
     - python-apt
     - openjdk-8-jdk
