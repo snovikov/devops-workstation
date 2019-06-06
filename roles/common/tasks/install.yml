@@ -34,23 +34,18 @@
     - yamllint
     state: latest
 
-- name: Install {{ item }}
-# TODO: use after migrating to ansible 2.8
-#  snap:
-#    name: {{ item }}
-#    classic: yes
-#    state: present
-  shell: "snap install {{ item }} --classic"
-  args:
-    creates: "/snap/bin/{{ item }}"
-  with_items:
-  - pycharm-community
-  - slack
-  - kops
-  - kubectl
-  - jq
-  - yq
-  - go
+- name: Install snap packages
+  snap:
+    name:
+    - pycharm-community
+    - slack
+    - kops
+    - kubectl
+    - jq
+    - yq
+    - go
+    classic: yes
+    state: present
 
 - name: Install Skype package
   apt:

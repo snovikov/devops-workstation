@@ -4,7 +4,7 @@ Basic setup for workstation
 ## Requirements
 
 * Ubuntu 18.04.2 LTS or later
-* Ansible version 2.7+
+* Ansible version 2.8+
 
 ## Install ansible
 
