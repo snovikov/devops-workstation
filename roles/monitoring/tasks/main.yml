@@ -1,5 +1,6 @@
 ---
 - include_tasks: install.yml
-  tags: docker-install
+  tags: monitoring-install
+
 - include_tasks: config.yml
-  tags: docker-config
+  tags: monitoring-config

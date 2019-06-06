@@ -5,9 +5,12 @@
   become_user: root
   roles:
     - {role: common, tags: common}
-    - {role: mysql-client, tags: mysql-client}
-    - {role: docker, tags: docker}
+    - {role: monitoring, tags: monitoring}
     - {role: google-chrome, tags: google-chrome}
+    - {role: docker, tags: docker}
+    - {role: mysql-client, tags: mysql-client}
     - {role: virtualbox, tags: virtualbox}
-    - {role: hipchat, tags: hipchat}
+    - {role: vagrant, tags: vagrant}
+    - {role: terraform, tags: terraform}
+    - {role: travis, tags: travis}
     - {role: atom, tags: atom}

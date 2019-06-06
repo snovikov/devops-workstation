@@ -1,15 +1,11 @@
 ---
-- name: Install packages
+- name: Install common deb packages
   apt:
-    name: "{{ item }}"
-    state: latest
-    update_cache: true
-  with_items:
-    - libappindicator1
-    - libindicator7
-    - python-cairo
-    - python-gobject-2
-    - python-gtk2
+    name:
+    - aptitude
+    - net-tools
+    - python-pip
+    - python-apt
     - openjdk-8-jdk
     - keepassx
     - geany
@@ -19,12 +15,37 @@
     - htop
     - mc
     - whois
-    - compizconfig-settings-manager
-    - python-pip
+    - curl
+    - network-manager-openvpn-gnome
+    - mokutil
+    - software-properties-common
+    - nodejs
+    - npm
+    state: latest
+    update_cache: true
 
-- name: Install vagrant package
-  apt:
-    deb: "https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.deb"
+- name: install pip packages
+  pip:
+    name:
+    - boto
+    - awscli
+    - aws-adfs
+    - cfn_flip
+    - openshift
+    - yamllint
+    state: latest
+
+- name: Install snap packages
+  snap:
+    name:
+    - pycharm-community
+    - slack
+    - kops
+    - kubectl
+    - jq
+    - yq
+    - go
+    classic: yes
     state: present
 
 - name: Install Skype package
@@ -32,10 +53,5 @@
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
 
-- name: install pip packages
-  pip:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-    - awscli
-    - aws-adfs
+# sudo npm install -g aws-azure-login --unsafe-perm
+# TODO: install dropbox

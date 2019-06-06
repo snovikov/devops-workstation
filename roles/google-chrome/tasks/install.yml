@@ -1,4 +1,9 @@
 ---
+- name: Add an apt key for google repository
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 7721F63BD38B4796
+
 - name: Add google repository
   apt_repository:
     repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"

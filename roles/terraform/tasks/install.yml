@@ -1,0 +1,23 @@
+---
+
+- name: "Check terraform installed"
+  shell: "terraform --version | grep -q 'Terraform v{{ terraform_version }}'"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download terrafrom binary
+  get_url:
+    url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+    dest: "/tmp/terraform_{{ terraform_version }}_linux_amd64.zip"
+  when: version_check is failed
+
+- name: Extract terraform
+  unarchive:
+    remote_src: yes
+    src: "/tmp/terraform_{{ terraform_version }}_linux_amd64.zip"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed

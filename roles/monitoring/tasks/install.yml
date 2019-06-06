@@ -1,0 +1,10 @@
+---
+- name: Install monitoring packages
+  apt:
+    name:
+    - lm-sensors
+    - hddtemp
+    - psensor
+    state: latest
+    update_cache: true
+  register: sensor_install

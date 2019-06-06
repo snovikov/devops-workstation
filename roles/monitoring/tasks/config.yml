@@ -1,0 +1,4 @@
+---
+- name: Detect sensors
+  command: sensors-detect
+  when: sensor_install is changed

@@ -1,0 +1,16 @@
+---
+- name: Install ruby deb packages
+  apt:
+    name:
+    - ruby
+    - ruby-dev
+    state: latest
+    update_cache: true
+
+- name: Install travis-cli gem
+  gem:
+    name: travis
+    state: present
+    version: "{{ travis_cli_version }}"
+    user_install: no
+    include_doc: no
