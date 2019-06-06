@@ -1,7 +1,10 @@
 ---
 # TODO: add history configuration in .bashrc
+# https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
+# append to the history file, don't overwrite it
+# shopt -s histappend
+# PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+# HISTSIZE="INFINITE"
+# HISTFILESIZE="INFINITE"
 
-# TODO: add adfs configuration in .bashrc
-
-# TODO: docker allow non-root user
-# $ sudo gpasswd -a $USER docker
+# TODO: add aws-azure-login configuration in .bashrc
