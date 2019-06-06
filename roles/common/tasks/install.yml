@@ -2,6 +2,7 @@
 - name: Install common deb packages
   apt:
     name:
+    - aptitude
     - net-tools
     - python-pip
     - python-apt
