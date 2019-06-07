@@ -42,6 +42,7 @@
     - slack
     - kops
     - kubectl
+    - helm
     - jq
     - yq
     - go
