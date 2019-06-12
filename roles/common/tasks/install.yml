@@ -33,6 +33,7 @@
     - cfn_flip
     - openshift
     - yamllint
+    - pygithub3
     state: latest
 
 - name: Install snap packages
