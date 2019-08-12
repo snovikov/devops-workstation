@@ -1,0 +1,16 @@
+---
+
+- name: "Check terraform installed"
+  shell: "terragrunt --version | grep -qPe '^terragrunt version v{{ terraform_version }}$'"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download terragrunt binary
+  get_url:
+    url: "https://github.com/gruntwork-io/terragrunt/releases/download/v{{ terraform_version }}/terragrunt_linux_amd64"
+    dest: "/usr/local/bin/terragrunt"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed
