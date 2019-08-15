@@ -21,6 +21,7 @@
     - software-properties-common
     - nodejs
     - npm
+    - nmap
     state: latest
     update_cache: true
 
