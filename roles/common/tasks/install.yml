@@ -52,6 +52,15 @@
     classic: yes
     state: present
 
+- name: Install aws-iam-authenticator
+  get_url:
+    url: "https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator"
+    checksum: "sha256:https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator.sha256"
+    dest: /usr/local/bin/aws-iam-authenticator
+    mode: 0755
+    owner: root
+    group: root
+
 - name: Install Skype package
   apt:
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
