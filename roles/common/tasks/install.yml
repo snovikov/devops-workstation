@@ -22,6 +22,7 @@
     - nodejs
     - npm
     - nmap
+    - xclip
     state: latest
     update_cache: true
 
