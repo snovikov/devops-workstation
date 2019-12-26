@@ -1,0 +1,23 @@
+---
+
+- name: "Check packer installed"
+  shell: "packer --version | grep -q '{{ packer_version }}'"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download packer binary
+  get_url:
+    url: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
+    dest: "/tmp/terraform_{{ packer_version }}_linux_amd64.zip"
+  when: version_check is failed
+
+- name: Extract packer
+  unarchive:
+    remote_src: yes
+    src: "/tmp/terraform_{{ packer_version }}_linux_amd64.zip"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed

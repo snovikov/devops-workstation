@@ -21,6 +21,8 @@
     - software-properties-common
     - nodejs
     - npm
+    - nmap
+    - xclip
     state: latest
     update_cache: true
 
@@ -33,6 +35,8 @@
     - cfn_flip
     - openshift
     - yamllint
+    - pygithub3
+    - dnspython
     state: latest
 
 - name: Install snap packages
@@ -42,16 +46,32 @@
     - slack
     - kops
     - kubectl
+    - helm
     - jq
     - yq
     - go
     classic: yes
     state: present
 
+- name: Install "aws-azure-login" package
+  npm:
+    name: aws-azure-login
+    global: yes
+    unsafe_perm: yes
+    state: latest
+
+- name: Install aws-iam-authenticator
+  get_url:
+    url: "https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator"
+    checksum: "sha256:https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator.sha256"
+    dest: /usr/local/bin/aws-iam-authenticator
+    mode: 0755
+    owner: root
+    group: root
+
 - name: Install Skype package
   apt:
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
 
-# sudo npm install -g aws-azure-login --unsafe-perm
 # TODO: install dropbox
