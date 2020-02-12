@@ -1,2 +1,2 @@
 ---
-terraform_version: "0.19.19"
+terragrunt_version: "0.21.13"
