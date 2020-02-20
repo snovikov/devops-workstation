@@ -4,15 +4,23 @@ Basic setup for workstation
 ## Requirements
 
 * Ubuntu 18.04.2 LTS or later
-* Ansible `>=2.8,<2.8.5`
+* Ansible `>=2.8,<2.9`
 
 ## Install ansible
+
+With apt
 
 ```bash
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install ansible
+```
+
+With pip
+
+```bash
+sudo pip install --no-cache-dir --no-compile "ansible>=2.8,<2.9"
 ```
 
 ## Apply settings
