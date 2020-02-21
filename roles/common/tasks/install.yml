@@ -30,8 +30,9 @@
   pip:
     name:
     - boto
+    - botocore
+    - boto3
     - awscli
-    - aws-adfs
     - cfn_flip
     - openshift
     - yamllint
