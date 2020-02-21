@@ -13,6 +13,7 @@
     - {role: vagrant, tags: vagrant}
     - {role: terraform, tags: terraform}
     - {role: terragrunt, tags: terragrunt}
+    - {role: kubernetes, tags: kubernetes}
     - {role: packer, tags: packer}
     - {role: travis, tags: travis}
     - {role: atom, tags: atom}

@@ -1,0 +1,45 @@
+---
+
+- name: "Check k9s installed"
+  shell: "k9s version | grep -qPe '^Version:\\\\s+v{{ k9s_version }}$'"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download k9s binary
+  get_url:
+    url: "https://github.com/derailed/k9s/releases/download/v{{ k9s_version }}/k9s_Linux_x86_64.tar.gz"
+    dest: "/tmp/k9s_{{ k9s_version }}_linux_x86_64.zip"
+  when: version_check is failed
+
+- name: Extract k9s
+  unarchive:
+    remote_src: yes
+    src: "/tmp/k9s_{{ k9s_version }}_linux_x86_64.zip"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed
+
+- name: "Check popeye installed"
+  shell: "popeye version | grep -qPe '^Version:\\\\s+v{{ popeye_version }}$'"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download popeye binary
+  get_url:
+    url: "https://github.com/derailed/popeye/releases/download/v{{ popeye_version }}/popeye_{{ popeye_version }}_Linux_x86_64.tar.gz"
+    dest: "/tmp/popeye_{{ popeye_version }}_linux_x86_64.zip"
+  when: version_check is failed
+
+- name: Extract popeye
+  unarchive:
+    remote_src: yes
+    src: "/tmp/popeye_{{ popeye_version }}_linux_x86_64.zip"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed
