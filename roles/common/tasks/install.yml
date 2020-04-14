@@ -59,7 +59,7 @@
     name: aws-azure-login
     global: yes
     unsafe_perm: yes
-    state: latest
+    state: present
 
 - name: Install aws-iam-authenticator
   get_url:
