@@ -18,6 +18,6 @@
 
 - name: Install virtualbox packages
   apt:
-    name: "virtualbox-6.0"
+    name: "virtualbox-6.1"
     state: latest
     update_cache: true
