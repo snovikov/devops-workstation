@@ -1,7 +1,7 @@
 ---
 
 - name: "Check k9s installed"
-  shell: "k9s version | grep -qPe '^Version:\\\\s+v{{ k9s_version }}$'"
+  shell: "k9s version | grep -qPe 'Version:.+{{ k9s_version }}'"
   register: version_check
   ignore_errors: True
   changed_when: false
@@ -23,14 +23,14 @@
   when: version_check is failed
 
 - name: "Check popeye installed"
-  shell: "popeye version | grep -qPe '^Version:\\\\s+v{{ popeye_version }}$'"
+  shell: "popeye version | grep -qPe 'Version:.+{{ popeye_version }}'"
   register: version_check
   ignore_errors: True
   changed_when: false
 
 - name: Download popeye binary
   get_url:
-    url: "https://github.com/derailed/popeye/releases/download/v{{ popeye_version }}/popeye_{{ popeye_version }}_Linux_x86_64.tar.gz"
+    url: "https://github.com/derailed/popeye/releases/download/v{{ popeye_version }}/popeye_Linux_x86_64.tar.gz"
     dest: "/tmp/popeye_{{ popeye_version }}_linux_x86_64.zip"
   when: version_check is failed
 

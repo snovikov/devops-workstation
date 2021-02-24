@@ -38,6 +38,7 @@
     - yamllint
     - pygithub3
     - dnspython
+    - netaddr
     state: latest
 
 - name: Install snap packages
