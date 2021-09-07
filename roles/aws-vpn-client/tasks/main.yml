@@ -1,0 +1,5 @@
+---
+- include_tasks: install.yml
+  tags: aws-vpn-client-install
+- include_tasks: config.yml
+  tags: aws-vpn-client-config

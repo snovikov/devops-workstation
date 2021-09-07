@@ -1,0 +1,17 @@
+---
+- name: Add AWS VPN client repository key
+  apt_key:
+    id: 6C10986628DDB2071BA01DEF4D44DBBF5AC99AC6
+    url: https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc
+    state: present
+
+- name: Add AWS VPN client repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo ubuntu-18.04 main"
+    filename: aws-vpn-client
+
+- name: Install AWS VPN client packages
+  apt:
+    name: awsvpnclient
+    state: latest
+    update_cache: true
