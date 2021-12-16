@@ -78,9 +78,17 @@
     owner: root
     group: root
 
+- name: "Check Skype is installed"
+  command: "dpkg-query -W skypeforlinux"
+  register: skype_check
+  failed_when: skype_check.rc > 1
+  changed_when: skype_check.rc == 1
+  ignore_errors: True
+
 - name: Install Skype package
   apt:
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
+  when: skype_check.rc == 1
 
 # TODO: install dropbox
