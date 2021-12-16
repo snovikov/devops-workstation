@@ -4,6 +4,7 @@
     name:
     - aptitude
     - net-tools
+    - xz-utils
     - python-apt
     - openjdk-8-jdk
     - keepassx
