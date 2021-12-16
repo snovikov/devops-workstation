@@ -4,7 +4,6 @@
     name:
     - aptitude
     - net-tools
-    - python-pip
     - python-apt
     - openjdk-8-jdk
     - keepassx
@@ -36,7 +35,7 @@
     - cfn_flip
     - openshift
     - yamllint
-    - pygithub3
+    - github3.py
     - dnspython
     - netaddr
     state: latest
@@ -58,6 +57,13 @@
 - name: Install "aws-azure-login" package
   npm:
     name: aws-azure-login
+    global: yes
+    unsafe_perm: yes
+    state: present
+
+- name: Install "serverless" package
+  npm:
+    name: serverless
     global: yes
     unsafe_perm: yes
     state: present
