@@ -1,6 +1,6 @@
 ---
 
-- name: "Check terraform installed"
+- name: "Check terraform is installed"
   shell: "terraform --version | grep -qPe '^Terraform v{{ terraform_version }}$'"
   register: version_check
   ignore_errors: True

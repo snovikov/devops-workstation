@@ -4,7 +4,7 @@
     name:
     - aptitude
     - net-tools
-    - python-pip
+    - xz-utils
     - python-apt
     - openjdk-8-jdk
     - keepassx
@@ -36,7 +36,7 @@
     - cfn_flip
     - openshift
     - yamllint
-    - pygithub3
+    - github3.py
     - dnspython
     - netaddr
     state: latest
@@ -62,6 +62,13 @@
     unsafe_perm: yes
     state: present
 
+- name: Install "serverless" package
+  npm:
+    name: serverless
+    global: yes
+    unsafe_perm: yes
+    state: present
+
 - name: Install aws-iam-authenticator
   get_url:
     url: "https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator"
@@ -71,9 +78,17 @@
     owner: root
     group: root
 
+- name: "Check Skype is installed"
+  command: "dpkg-query -W skypeforlinux"
+  register: skype_check
+  failed_when: skype_check.rc > 1
+  changed_when: skype_check.rc == 1
+  ignore_errors: True
+
 - name: Install Skype package
   apt:
     deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     state: present
+  when: skype_check.rc == 1
 
 # TODO: install dropbox
