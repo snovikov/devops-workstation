@@ -21,3 +21,25 @@
     group: root
     mode: 0755
   when: version_check is failed
+
+- name: "Check terraform-docs installed"
+  shell: "terraform-docs version | grep -qPe 'version v{{ terraform_docs_version }} '"
+  register: docs_version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Download terraform-docs binary
+  get_url:
+    url: "https://terraform-docs.io/dl/v{{ terraform_docs_version }}/terraform-docs-v{{ terraform_docs_version }}-Linux-amd64.tar.gz"
+    dest: "/tmp/terraform-docs_{{ terraform_docs_version }}-Linux-amd64.tar.gz"
+  when: docs_version_check is failed
+
+- name: Extract terraform-docs
+  unarchive:
+    remote_src: yes
+    src: "/tmp/terraform-docs_{{ terraform_docs_version }}-Linux-amd64.tar.gz"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+  when: docs_version_check is failed
