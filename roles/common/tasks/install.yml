@@ -39,6 +39,7 @@
     - github3.py
     - dnspython
     - netaddr
+    - pre-commit
     state: latest
 
 - name: Install snap packages
