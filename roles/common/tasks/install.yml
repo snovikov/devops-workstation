@@ -5,7 +5,8 @@
     - aptitude
     - net-tools
     - xz-utils
-    - python-apt
+    - python3-apt
+    - python3-gpg
     - openjdk-8-jdk
     - keepassx
     - geany
