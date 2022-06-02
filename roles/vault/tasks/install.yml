@@ -1,7 +1,7 @@
 ---
 
 - name: "Check vault is installed"
-  shell: "vault --version | grep -qPe '^Vault v{{ vault_version }}$'"
+  shell: "vault --version | grep -qPe '^Vault v{{ vault_version }} .*$'"
   register: version_check
   ignore_errors: True
   changed_when: false
