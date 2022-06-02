@@ -15,6 +15,7 @@
     - {role: terraform, tags: terraform}
     - {role: terragrunt, tags: terragrunt}
     - {role: sops, tags: sops}
+    - {role: vault, tags: vault}
     - {role: kubernetes, tags: kubernetes}
     - {role: packer, tags: packer}
     - {role: travis, tags: travis}
