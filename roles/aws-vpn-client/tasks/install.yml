@@ -1,7 +1,7 @@
 ---
 - name: Add AWS VPN client repository key
   apt_key:
-    id: 6C10986628DDB2071BA01DEF4D44DBBF5AC99AC6
+    id: A869E75F05B35B1C0FAAB620219B0B8D707EA7B7
     url: https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc
     state: present
 
