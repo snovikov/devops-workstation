@@ -30,11 +30,6 @@
 - name: install pip packages
   pip:
     name:
-    - boto
-    - botocore
-    - boto3
-    - awscli
-    - cfn_flip
     - openshift
     - yamllint
     - github3.py
@@ -56,29 +51,6 @@
     - go
     classic: yes
     state: present
-
-- name: Install "aws-azure-login" package
-  npm:
-    name: aws-azure-login
-    global: yes
-    unsafe_perm: yes
-    state: present
-
-- name: Install "serverless" package
-  npm:
-    name: serverless
-    global: yes
-    unsafe_perm: yes
-    state: present
-
-- name: Install aws-iam-authenticator
-  get_url:
-    url: "https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator"
-    checksum: "sha256:https://amazon-eks.s3-us-west-2.amazonaws.com/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2019-06-11/bin/linux/amd64/aws-iam-authenticator.sha256"
-    dest: /usr/local/bin/aws-iam-authenticator
-    mode: 0755
-    owner: root
-    group: root
 
 - name: "Check Skype is installed"
   command: "dpkg-query -W skypeforlinux"
