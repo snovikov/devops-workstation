@@ -3,7 +3,7 @@ Basic setup for workstation
 
 ## Requirements
 
-* Ubuntu 20.04.3 LTS or later
+* Ubuntu 22.04.1 LTS or later
 * Ansible `>=2.8,<2.9`
 
 ## Install ansible
