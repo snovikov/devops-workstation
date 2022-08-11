@@ -3,7 +3,6 @@
   apt:
     name:
     - lm-sensors
-    - hddtemp
     - psensor
     state: latest
     update_cache: true

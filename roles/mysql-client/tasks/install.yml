@@ -15,6 +15,6 @@
 
 - name: "Install {{ mysql_bench_package }} package"
   apt:
-    deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu20.04_amd64.deb"
+    deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu22.04_amd64.deb"
     update_cache: false
   when: package_check.rc == 1

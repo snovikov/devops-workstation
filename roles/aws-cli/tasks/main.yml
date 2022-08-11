@@ -1,0 +1,5 @@
+---
+- include_tasks: install.yml
+  tags: aws-cli-install
+- include_tasks: config.yml
+  tags: aws-cli-config
