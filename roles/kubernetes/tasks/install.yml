@@ -1,7 +1,7 @@
 ---
 
 - name: "Check kops installed"
-  shell: "kops version | grep -qPe 'Version:.+{{ kops_version }}'"
+  shell: "kops version | grep -qPe 'Version.+{{ kops_version }}'"
   register: version_check
   ignore_errors: True
   changed_when: false

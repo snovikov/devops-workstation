@@ -3,6 +3,7 @@
   apt:
     name:
     - aptitude
+    - apt-transport-https
     - net-tools
     - xz-utils
     - python3-apt
@@ -20,8 +21,6 @@
     - network-manager-openvpn-gnome
     - mokutil
     - software-properties-common
-    - nodejs
-    - npm
     - nmap
     - xclip
     state: latest

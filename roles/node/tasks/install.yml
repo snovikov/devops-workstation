@@ -1,0 +1,16 @@
+---
+
+- name: "Execute setup for node"
+  shell: "curl -fsSL https://deb.nodesource.com/setup_{{ node_version }}.x | sudo -E bash"
+
+- name: "Install node packages"
+  apt:
+    name: nodejs
+    state: latest
+    update_cache: true
+
+- name: "Install latest npm package"
+  npm:
+    name: npm
+    global: yes
+    state: latest

@@ -5,6 +5,7 @@
   become_user: root
   roles:
     - {role: common, tags: common}
+    - {role: node, tags: node}
     - {role: aws-cli, tags: aws-cli}
     - {role: aws-vpn-client, tags: aws-vpn-client}
     - {role: monitoring, tags: monitoring}
