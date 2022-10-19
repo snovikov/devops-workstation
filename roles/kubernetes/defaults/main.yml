@@ -1,3 +1,4 @@
 ---
+kops_version: "1.18.3"
 k9s_version: "0.22.1"
 popeye_version: "0.8.10"
