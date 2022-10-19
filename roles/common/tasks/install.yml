@@ -43,7 +43,6 @@
     name:
     - pycharm-community
     - slack
-    - kops
     - kubectl
     - helm
     - jq
