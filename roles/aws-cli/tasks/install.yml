@@ -5,9 +5,50 @@
     - boto
     - botocore
     - boto3
-    - awscli
     - cfn_flip
     state: latest
+
+- name: "Check awscli is installed"
+  shell: "aws --version | grep -qPe '^aws-cli/{{ awscli_version }} '"
+  register: version_check
+  ignore_errors: True
+  changed_when: false
+
+- name: Install aws-cli gpg-key
+  command: "gpg --keyserver pgp.mit.edu --recv-keys {{ awscli_pgp_key }}"
+  when: version_check is failed
+
+- name: Download awscli zip
+  get_url:
+    url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ awscli_version }}.zip"
+    dest: "/tmp/awscliv2.zip"
+  when: version_check is failed
+
+- name: Download awscli signature
+  get_url:
+    url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ awscli_version }}.zip.sig"
+    dest: "/tmp/awscliv2.sig"
+  when: version_check is failed
+
+- name: Verify the signature of aws-cli zip
+  command: "gpg --verify /tmp/awscliv2.sig /tmp/awscliv2.zip"
+  when: version_check is failed
+
+- name: Extract awscli zip
+  unarchive:
+    remote_src: yes
+    src: "/tmp/awscliv2.zip"
+    dest: "/tmp/"
+    owner: root
+    group: root
+    mode: 0755
+  when: version_check is failed
+
+- name: Install awscli
+  command:
+    chdir: "/tmp/aws"
+    cmd: "./install"
+  when: version_check is failed
 
 - name: Install "aws-azure-login" package
   npm:
