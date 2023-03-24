@@ -1,3 +1,4 @@
 ---
-
-AWS_IAM_AUTHENTICATOR_VERSION: '1.21.2'
+awscli_version: "2.11.5"
+awscli_pgp_key: "4672475C"
+AWS_IAM_AUTHENTICATOR_VERSION: "1.21.2"
