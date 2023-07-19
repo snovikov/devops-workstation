@@ -1,2 +1,3 @@
 ---
 terragrunt_version: "0.48.1"
+atlantis_config_version: "1.16.0"
