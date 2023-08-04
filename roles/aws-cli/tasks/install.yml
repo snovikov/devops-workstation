@@ -14,9 +14,15 @@
   ignore_errors: True
   changed_when: false
 
+- name: "Check aws gpg key is imported"
+  shell: "gpg --list-keys {{ awscli_pgp_key }} 2>/dev/null"
+  register: gpg_key_check
+  ignore_errors: True
+  changed_when: false
+
 - name: Install aws-cli gpg-key
   command: "gpg --keyserver pgp.mit.edu --recv-keys {{ awscli_pgp_key }}"
-  when: version_check is failed
+  when: version_check is failed and gpg_key_check is failed
 
 - name: Download awscli zip
   get_url:
@@ -47,7 +53,7 @@
 - name: Install awscli
   command:
     chdir: "/tmp/aws"
-    cmd: "./install"
+    cmd: "./install --update"
   when: version_check is failed
 
 - name: Install "aws-azure-login" package
