@@ -1,6 +1,6 @@
 ---
 
-- name: "Check terraform is installed"
+- name: "Check terragrunt is installed"
   shell: "terragrunt --version | grep -qPe '^terragrunt version v{{ terragrunt_version }}$'"
   register: version_check
   ignore_errors: True
