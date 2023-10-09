@@ -4,7 +4,7 @@
   shell: "sops --version | grep -qPe '^sops {{ sops_version }}.*'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Install sops deb package
   apt:

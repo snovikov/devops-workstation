@@ -4,7 +4,7 @@
   shell: "terraform --version | grep -qPe '^Terraform v{{ terraform_version }}$'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download terrafrom binary
   get_url:
@@ -14,7 +14,7 @@
 
 - name: Extract terraform
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/terraform_{{ terraform_version }}_linux_amd64.zip"
     dest: "/usr/local/bin"
     owner: root
@@ -26,7 +26,7 @@
   shell: "terraform-docs version | grep -qPe 'version v{{ terraform_docs_version }} '"
   register: docs_version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download terraform-docs binary
   get_url:
@@ -36,7 +36,7 @@
 
 - name: Extract terraform-docs
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/terraform-docs_{{ terraform_docs_version }}-Linux-amd64.tar.gz"
     dest: "/usr/local/bin"
     owner: root

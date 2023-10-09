@@ -4,7 +4,7 @@
   shell: "packer --version | grep -q '{{ packer_version }}'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download packer binary
   get_url:
@@ -14,7 +14,7 @@
 
 - name: Extract packer
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/terraform_{{ packer_version }}_linux_amd64.zip"
     dest: "/usr/local/bin"
     owner: root

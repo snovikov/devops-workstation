@@ -7,10 +7,10 @@
   apt:
     name: nodejs
     state: latest
-    update_cache: true
+    update_cache: True
 
 - name: "Install latest npm package"
   npm:
     name: npm
-    global: yes
+    global: True
     state: latest

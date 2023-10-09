@@ -4,7 +4,7 @@
   shell: "kops version | grep -qPe 'Version.+{{ kops_version }}'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download kops binary
   get_url:
@@ -19,7 +19,7 @@
   shell: "k9s version | grep -qPe 'Version:.+{{ k9s_version }}'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download k9s binary
   get_url:
@@ -29,7 +29,7 @@
 
 - name: Extract k9s
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/k9s_{{ k9s_version }}_linux_amd64.zip"
     dest: "/usr/local/bin"
     owner: root
@@ -41,7 +41,7 @@
   shell: "popeye version | grep -qPe 'Version:.+{{ popeye_version }}'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download popeye binary
   get_url:
@@ -51,7 +51,7 @@
 
 - name: Extract popeye
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/popeye_{{ popeye_version }}_linux_x86_64.zip"
     dest: "/usr/local/bin"
     owner: root

@@ -2,52 +2,52 @@
 - name: Install common deb packages
   apt:
     name:
-    - aptitude
-    - apt-transport-https
-    - net-tools
-    - xz-utils
-    - python3-apt
-    - python3-gpg
-    - openjdk-11-jdk
-    - keepassx
-    - geany
-    - git
-    - tig
-    - vim
-    - htop
-    - mc
-    - whois
-    - curl
-    - network-manager-openvpn-gnome
-    - mokutil
-    - software-properties-common
-    - nmap
-    - xclip
+      - aptitude
+      - apt-transport-https
+      - net-tools
+      - xz-utils
+      - python3-apt
+      - python3-gpg
+      - openjdk-11-jdk
+      - keepassx
+      - geany
+      - git
+      - tig
+      - vim
+      - htop
+      - mc
+      - whois
+      - curl
+      - network-manager-openvpn-gnome
+      - mokutil
+      - software-properties-common
+      - nmap
+      - xclip
     state: latest
-    update_cache: true
+    update_cache: True
 
 - name: install pip packages
   pip:
     name:
-    - openshift
-    - yamllint
-    - github3.py
-    - dnspython
-    - netaddr
-    - pre-commit
+      - openshift
+      - yamllint
+      - github3.py
+      - dnspython
+      - netaddr
+      - pre-commit
     state: latest
 
 - name: Install snap packages
   snap:
     name:
-    - pycharm-community
-    - slack
-    - kubectl
-    - helm
-    - jq
-    - yq
-    - go
-    classic: yes
+      - pycharm-community
+      - slack
+      - kubectl
+      - helm
+      - jq
+      - yq
+      - go
+    classic: True
     state: present
 
 - name: "Check Skype is installed"

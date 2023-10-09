@@ -2,15 +2,15 @@
 - name: Install ruby deb packages
   apt:
     name:
-    - ruby
-    - ruby-dev
+      - ruby
+      - ruby-dev
     state: latest
-    update_cache: true
+    update_cache: True
 
 - name: Install travis-cli gem
   gem:
     name: travis
     state: present
     version: "{{ travis_cli_version }}"
-    user_install: no
-    include_doc: no
+    user_install: False
+    include_doc: False
