@@ -4,13 +4,13 @@
   shell: "terragrunt --version | grep -qPe '^terragrunt version v{{ terragrunt_version }}$'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download terragrunt binary
   get_url:
     url: "https://github.com/gruntwork-io/terragrunt/releases/download/v{{ terragrunt_version }}/terragrunt_linux_amd64"
     dest: "/usr/local/bin/terragrunt"
-    force: yes
+    force: True
     owner: root
     group: root
     mode: 0755
@@ -20,7 +20,7 @@
   shell: "terragrunt-atlantis-config version | grep -qPe \"^terragrunt-atlantis-config '{{ atlantis_config_version }}'$\""
   register: config_version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download terragrunt-atlantis-config binary
   get_url:
@@ -30,7 +30,7 @@
 
 - name: Extract terragrunt-atlantis-config
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64.tar.gz"
     dest: "/tmp"
     owner: root

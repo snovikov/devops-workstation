@@ -2,23 +2,23 @@
 - name: install pip packages
   pip:
     name:
-    - boto
-    - botocore
-    - boto3
-    - cfn_flip
+      - boto
+      - botocore
+      - boto3
+      - cfn_flip
     state: latest
 
 - name: "Check awscli is installed"
   shell: "aws --version | grep -qPe '^aws-cli/{{ awscli_version }} '"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: "Check aws gpg key is imported"
   shell: "gpg --list-keys {{ awscli_pgp_key }} 2>/dev/null"
   register: gpg_key_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Install aws-cli gpg-key
   command: "gpg --keyserver pgp.mit.edu --recv-keys {{ awscli_pgp_key }}"
@@ -42,7 +42,7 @@
 
 - name: Extract awscli zip
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/awscliv2.zip"
     dest: "/tmp/"
     owner: root
@@ -59,15 +59,15 @@
 - name: Install "aws-azure-login" package
   npm:
     name: aws-azure-login
-    global: yes
-    unsafe_perm: yes
+    global: True
+    unsafe_perm: True
     state: present
 
 - name: Install "serverless" package
   npm:
     name: serverless
-    global: yes
-    unsafe_perm: yes
+    global: True
+    unsafe_perm: True
     state: present
 
 - name: Install aws-iam-authenticator

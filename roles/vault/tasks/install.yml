@@ -4,7 +4,7 @@
   shell: "vault --version | grep -qPe '^Vault v{{ vault_version }} .*$'"
   register: version_check
   ignore_errors: True
-  changed_when: false
+  changed_when: False
 
 - name: Download vault binary
   get_url:
@@ -14,7 +14,7 @@
 
 - name: Extract vault
   unarchive:
-    remote_src: yes
+    remote_src: True
     src: "/tmp/vault_{{ vault_version }}_linux_amd64.zip"
     dest: "/usr/local/bin"
     owner: root

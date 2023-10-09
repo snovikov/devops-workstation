@@ -13,4 +13,4 @@
   apt:
     name: "google-chrome-stable"
     state: latest
-    update_cache: true
+    update_cache: True

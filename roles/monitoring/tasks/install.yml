@@ -2,8 +2,8 @@
 - name: Install monitoring packages
   apt:
     name:
-    - lm-sensors
-    - psensor
+      - lm-sensors
+      - psensor
     state: latest
-    update_cache: true
+    update_cache: True
   register: sensor_install

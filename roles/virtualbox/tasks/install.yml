@@ -20,4 +20,4 @@
   apt:
     name: "virtualbox-6.1"
     state: latest
-    update_cache: true
+    update_cache: True

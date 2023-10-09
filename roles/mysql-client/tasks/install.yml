@@ -2,9 +2,9 @@
 - name: Install mysql-client package
   apt:
     name:
-    - mysql-client
+      - mysql-client
     state: latest
-    update_cache: true
+    update_cache: True
 
 - name: "Check {{ mysql_bench_package }} is installed"
   command: "dpkg-query -W {{ mysql_bench_package }}"
@@ -16,5 +16,5 @@
 - name: "Install {{ mysql_bench_package }} package"
   apt:
     deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu22.04_amd64.deb"
-    update_cache: false
+    update_cache: False
   when: package_check.rc == 1

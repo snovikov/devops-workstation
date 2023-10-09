@@ -14,4 +14,4 @@
   apt:
     name: docker-ce
     state: latest
-    update_cache: true
+    update_cache: True
