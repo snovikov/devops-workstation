@@ -1,7 +1,7 @@
 ---
 
 - name: "Check kops installed"
-  shell: "kops version | grep -qPe 'Version.+{{ kops_version }}'"
+  shell: "kops version | grep -qPe 'version:.+{{ kops_version }}'"
   register: version_check
   ignore_errors: True
   changed_when: False
@@ -45,7 +45,7 @@
 
 - name: Download popeye binary
   get_url:
-    url: "https://github.com/derailed/popeye/releases/download/v{{ popeye_version }}/popeye_Linux_x86_64.tar.gz"
+    url: "https://github.com/derailed/popeye/releases/download/v{{ popeye_version }}/popeye_Linux_amd64.tar.gz"
     dest: "/tmp/popeye_{{ popeye_version }}_linux_x86_64.zip"
   when: version_check is failed
 
