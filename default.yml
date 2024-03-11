@@ -13,7 +13,6 @@
     - {role: docker, tags: docker}
     - {role: mysql-client, tags: mysql-client}
     - {role: virtualbox, tags: virtualbox}
-    - {role: vagrant, tags: vagrant}
     - {role: terraform, tags: terraform}
     - {role: terragrunt, tags: terragrunt}
     - {role: sops, tags: sops}
