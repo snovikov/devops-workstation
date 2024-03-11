@@ -3,24 +3,19 @@ Basic setup for workstation
 
 ## Requirements
 
-* Ubuntu 22.04.1 LTS or later
-* Ansible `>=2.8,<2.9`
+* Ubuntu 22.04.4 LTS or later
+* Ansible `9.0+`
+* ansbile collection `ansible.posix 1.5.4+`
+* ansbile collection `community.general 8.3.0+`
 
 ## Install ansible
-
-With apt
-
-```bash
-sudo apt-get update
-sudo apt-get install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt-get install ansible
-```
 
 With pip
 
 ```bash
-sudo pip install --no-cache-dir --no-compile "ansible>=2.8,<2.9"
+pip install --no-cache-dir --no-compile "ansible>=9.0,<10.0"
+ansible-galaxy collection install ansible.posix
+ansible-galaxy collection install community.general
 ```
 
 ## Apply settings
