@@ -17,29 +17,17 @@
   when: version_check is failed
 
 - name: "Check terragrunt-atlantis-config is installed"
-  shell: "terragrunt-atlantis-config version | grep -qPe \"^terragrunt-atlantis-config '{{ atlantis_config_version }}'$\""
+  shell: "terragrunt-atlantis-config version | grep -qPe \"^terragrunt-atlantis-config {{ atlantis_config_version }}$\""
   register: config_version_check
   ignore_errors: True
   changed_when: False
 
 - name: Download terragrunt-atlantis-config binary
   get_url:
-    url: "https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v{{ atlantis_config_version }}/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64.tar.gz"
-    dest: "/tmp/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64.tar.gz"
-  when: config_version_check is failed
-
-- name: Extract terragrunt-atlantis-config
-  unarchive:
-    remote_src: True
-    src: "/tmp/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64.tar.gz"
-    dest: "/tmp"
+    url: "https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v{{ atlantis_config_version }}/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64"
+    dest: "/usr/local/bin/terragrunt-atlantis-config"
+    force: True
     owner: root
     group: root
     mode: 0755
-  when: config_version_check is failed
-
-- name: Install terragrunt-atlantis-config
-  shell: "mv terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64 /usr/local/bin/terragrunt-atlantis-config"
-  args:
-    chdir: "/tmp/terragrunt-atlantis-config_{{ atlantis_config_version }}_linux_amd64"
   when: config_version_check is failed
