@@ -12,7 +12,6 @@
     - {role: google-chrome, tags: google-chrome}
     - {role: docker, tags: docker}
     - {role: mysql-client, tags: mysql-client}
-    - {role: virtualbox, tags: virtualbox}
     - {role: terraform, tags: terraform}
     - {role: terragrunt, tags: terragrunt}
     - {role: sops, tags: sops}
