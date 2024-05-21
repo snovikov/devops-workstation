@@ -1,19 +1,20 @@
 # devops-workstation
+
 Basic setup for workstation
 
 ## Requirements
 
-* Ubuntu 22.04.4 LTS or later
+* Ubuntu 24.04 LTS or later
 * Ansible `9.0+`
 * ansbile collection `ansible.posix 1.5.4+`
 * ansbile collection `community.general 8.3.0+`
 
 ## Install ansible
 
-With pip
+With apt
 
 ```bash
-pip install --no-cache-dir --no-compile "ansible>=9.0,<10.0"
+sudo apt install ansible
 ansible-galaxy collection install ansible.posix
 ansible-galaxy collection install community.general
 ```
