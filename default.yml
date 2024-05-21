@@ -19,5 +19,4 @@
     - {role: vault, tags: vault}
     - {role: kubernetes, tags: kubernetes}
     - {role: packer, tags: packer}
-    - {role: travis, tags: travis}
     - {role: onepassword, tags: onepassword}
