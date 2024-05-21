@@ -1,19 +1,13 @@
 ---
 
-- name: "Check kops installed"
-  shell: "kops version | grep -qPe 'version:.+{{ kops_version }}'"
-  register: version_check
-  ignore_errors: True
-  changed_when: False
-
-- name: Download kops binary
-  get_url:
-    url: "https://github.com/kubernetes/kops/releases/download/v{{ kops_version }}/kops-linux-amd64"
-    dest: "/usr/local/bin/kops"
-    owner: root
-    group: root
-    mode: 0755
-  when: version_check is failed
+- name: Install snap packages
+  snap:
+    name:
+      - kubectl
+      - helm
+      - kontena-lens
+    classic: True
+    state: present
 
 - name: "Check k9s installed"
   shell: "k9s version | grep -qPe 'Version:.+{{ k9s_version }}'"

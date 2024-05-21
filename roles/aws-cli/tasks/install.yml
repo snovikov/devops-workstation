@@ -1,11 +1,10 @@
 ---
-- name: install pip packages
-  pip:
+- name: install boto deb packages
+  apt:
     name:
-      - boto
-      - botocore
-      - boto3
-      - cfn_flip
+      - python3-boto
+      - python3-boto3
+      - python3-botocore
     state: latest
 
 - name: "Check awscli is installed"

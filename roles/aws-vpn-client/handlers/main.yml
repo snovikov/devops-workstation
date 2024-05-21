@@ -1,0 +1,4 @@
+- name: Restart awsvpnclient service
+  ansible.builtin.service:
+    name: awsvpnclient
+    state: restarted

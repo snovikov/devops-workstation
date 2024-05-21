@@ -8,7 +8,11 @@
       - xz-utils
       - python3-apt
       - python3-gpg
-      - openjdk-11-jdk
+      - python3-dnspython
+      - python3-github
+      - python3-netaddr
+      - python3-openshift
+      - openjdk-17-jdk
       - keepassx
       - geany
       - git
@@ -26,24 +30,18 @@
     state: latest
     update_cache: True
 
-- name: install pip packages
-  pip:
-    name:
-      - openshift
-      - yamllint
-      - github3.py
-      - dnspython
-      - netaddr
-      - pre-commit
-    state: latest
+#- name: install pip packages
+#  pip:
+#    name:
+#      - yamllint
+#      - pre-commit
+#    state: latest
 
 - name: Install snap packages
   snap:
     name:
       - pycharm-community
       - slack
-      - kubectl
-      - helm
       - jq
       - yq
       - go
