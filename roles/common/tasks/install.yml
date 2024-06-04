@@ -42,25 +42,16 @@
 - name: Install snap packages
   snap:
     name:
-      - pycharm-community
-      - slack
       - jq
       - yq
       - go
+      - pycharm-community
+      - slack
+      - skype
     classic: True
     state: present
 
-- name: "Check Skype is installed"
-  command: "dpkg-query -W skypeforlinux"
-  register: skype_check
-  failed_when: skype_check.rc > 1
-  changed_when: skype_check.rc == 1
-  ignore_errors: True
-
-- name: Install Skype package
+- name: Install Dropbox
   apt:
-    deb: "https://repo.skype.com/latest/skypeforlinux-64.deb"
+    deb: "https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb"
     state: present
-  when: skype_check.rc == 1
-
-# TODO: install dropbox
