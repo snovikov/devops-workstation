@@ -16,4 +16,4 @@
   ansible.builtin.lineinfile:
     path: /usr/share/applications/awsvpnclient.desktop
     regexp: '^Exec='
-    line: Exec=sh -c "/opt/awsvpnclient/AWS\\ VPN\\ Client %u"
+    line: Exec=/opt/awsvpnclient/AWS\\ VPN\\ Client %u
