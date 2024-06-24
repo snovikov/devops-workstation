@@ -3,6 +3,7 @@
   apt:
     name:
       - mysql-client
+      - mysql-shell
     state: latest
     update_cache: True
 
@@ -18,3 +19,10 @@
     deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu22.04_amd64.deb"
     update_cache: False
   when: package_check.rc == 1
+
+- name: Install DBeaver package
+  snap:
+    name:
+      - dbeaver-ce
+    classic: True
+    state: present
