@@ -11,9 +11,7 @@
     - {role: monitoring, tags: monitoring}
     - {role: google-chrome, tags: google-chrome}
     - {role: docker, tags: docker}
-    # Disable till DEB-package is build for Ubuntu 24.04
-    # https://dev.mysql.com/downloads/workbench/
-    #- {role: mysql-client, tags: mysql-client}
+    - {role: mysql-client, tags: mysql-client}
     - {role: terraform, tags: terraform}
     - {role: terragrunt, tags: terragrunt}
     - {role: sops, tags: sops}
