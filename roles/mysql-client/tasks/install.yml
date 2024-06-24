@@ -7,22 +7,24 @@
     state: latest
     update_cache: True
 
-- name: "Check {{ mysql_bench_package }} is installed"
-  command: "dpkg-query -W {{ mysql_bench_package }}"
-  register: package_check
-  failed_when: package_check.rc > 1
-  changed_when: package_check.rc == 1
-  ignore_errors: True
-
-- name: "Install {{ mysql_bench_package }} package"
-  apt:
-    deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu22.04_amd64.deb"
-    update_cache: False
-  when: package_check.rc == 1
-
 - name: Install DBeaver package
   snap:
     name:
       - dbeaver-ce
     classic: True
     state: present
+
+# Disable till DEB-package is build for Ubuntu 24.04
+# https://dev.mysql.com/downloads/workbench/
+# - name: "Check {{ mysql_bench_package }} is installed"
+#   command: "dpkg-query -W {{ mysql_bench_package }}"
+#   register: package_check
+#   failed_when: package_check.rc > 1
+#   changed_when: package_check.rc == 1
+#   ignore_errors: True
+#
+# - name: "Install {{ mysql_bench_package }} package"
+#   apt:
+#     deb: "https://dev.mysql.com/get/Downloads/MySQLGUITools/{{ mysql_bench_package }}_{{ mysql_bench_version }}-1ubuntu22.04_amd64.deb"
+#     update_cache: False
+#   when: package_check.rc == 1
