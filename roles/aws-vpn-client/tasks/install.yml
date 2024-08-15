@@ -3,6 +3,7 @@
   apt_key:
     id: 0B8B890071C04E08
     url: https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc
+    keyring: /etc/apt/trusted.gpg.d/awsvpnclient.gpg
     state: present
 
 # TODO: unsecure, replace with ppa or backports
