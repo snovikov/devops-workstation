@@ -7,7 +7,7 @@
     - {role: common, tags: common}
     - {role: node, tags: node}
     - {role: aws-cli, tags: aws-cli}
-    - {role: aws-vpn-client, tags: aws-vpn-client}
+    #- {role: aws-vpn-client, tags: aws-vpn-client}
     - {role: monitoring, tags: monitoring}
     - {role: google-chrome, tags: google-chrome}
     - {role: docker, tags: docker}

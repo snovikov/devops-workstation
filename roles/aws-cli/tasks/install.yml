@@ -1,11 +1,13 @@
 ---
 - name: install boto deb packages
-  apt:
+  ansible.builtin.apt:
     name:
       - python3-boto
       - python3-boto3
       - python3-botocore
     state: latest
+    update_cache: true
+    cache_valid_time: 3600
 
 - name: "Check awscli is installed"
   shell: "aws --version | grep -qPe '^aws-cli/{{ awscli_version }} '"
@@ -79,6 +81,7 @@
     group: root
 
 - name: Install Session Manager plugin
-  apt:
+  ansible.builtin.apt:
     deb: "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb"
     state: present
+    update_cache: false

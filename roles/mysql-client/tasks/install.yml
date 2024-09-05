@@ -1,11 +1,12 @@
 ---
 - name: Install mysql-client package
-  apt:
+  ansible.builtin.apt:
     name:
       - mysql-client
       - mysql-shell
     state: latest
     update_cache: True
+    cache_valid_time: 3600
 
 - name: Install DBeaver package
   snap:

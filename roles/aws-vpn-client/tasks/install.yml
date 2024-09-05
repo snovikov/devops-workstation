@@ -9,9 +9,10 @@
 # TODO: unsecure, replace with ppa or backports
 # Check for current libssl versions: http://security.ubuntu.com/ubuntu/pool/main/o/openssl/
 - name: Add old ssl-library
-  apt:
+  ansible.builtin.apt:
     deb: "http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb"
     state: present
+    update_cache: false
 
 - name: Add AWS VPN client repository
   apt_repository:
@@ -19,7 +20,8 @@
     filename: aws-vpn-client
 
 - name: Install AWS VPN client packages
-  apt:
+  ansible.builtin.apt:
     name: awsvpnclient
     state: latest
-    update_cache: True
+    update_cache: true
+    cache_valid_time: 3600

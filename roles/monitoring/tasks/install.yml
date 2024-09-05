@@ -1,9 +1,10 @@
 ---
 - name: Install monitoring packages
-  apt:
+  ansible.builtin.apt:
     name:
       - lm-sensors
       - psensor
     state: latest
-    update_cache: True
+    update_cache: true
+    cache_valid_time: 3600
   register: sensor_install

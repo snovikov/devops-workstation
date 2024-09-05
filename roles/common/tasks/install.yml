@@ -1,6 +1,6 @@
 ---
 - name: Install common deb packages
-  apt:
+  ansible.builtin.apt:
     name:
       - aptitude
       - apt-transport-https
@@ -30,7 +30,8 @@
       - nmap
       - xclip
     state: latest
-    update_cache: True
+    update_cache: true
+    cache_valid_time: 3600
 
 #- name: install pip packages
 #  pip:
@@ -52,6 +53,7 @@
     state: present
 
 - name: Install Dropbox
-  apt:
+  ansible.builtin.apt:
     deb: "https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb"
     state: present
+    update_cache: false

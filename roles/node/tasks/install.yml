@@ -4,10 +4,11 @@
   shell: "curl -fsSL https://deb.nodesource.com/setup_{{ node_version }}.x | sudo -E bash"
 
 - name: "Install node packages"
-  apt:
+  ansible.builtin.apt:
     name: nodejs
     state: latest
     update_cache: True
+    cache_valid_time: 3600
 
 - name: "Install latest npm package"
   npm:
