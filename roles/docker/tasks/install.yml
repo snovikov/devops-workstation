@@ -12,7 +12,8 @@
     filename: docker-ce
 
 - name: Install docker packages
-  apt:
+  ansible.builtin.apt:
     name: docker-ce
     state: latest
     update_cache: True
+    cache_valid_time: 3600

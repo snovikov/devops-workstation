@@ -7,6 +7,7 @@
   changed_when: False
 
 - name: Install sops deb package
-  apt:
+  ansible.builtin.apt:
     deb: "https://github.com/mozilla/sops/releases/download/v{{ sops_version }}/sops_{{ sops_version }}_amd64.deb"
+    update_cache: False
   when: version_check is failed
