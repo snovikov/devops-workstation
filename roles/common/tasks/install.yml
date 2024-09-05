@@ -30,7 +30,7 @@
       - nmap
       - xclip
     state: latest
-    update_cache: true
+    update_cache: True
     cache_valid_time: 3600
 
 #- name: install pip packages
@@ -56,4 +56,4 @@
   ansible.builtin.apt:
     deb: "https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb"
     state: present
-    update_cache: false
+    update_cache: False

@@ -10,7 +10,7 @@
   ansible.builtin.apt:
     deb: "https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb"
     state: present
-    update_cache: false
+    update_cache: False
   when: package_check.rc == 1
 
 - name: "Check onepassword CLI is installed"

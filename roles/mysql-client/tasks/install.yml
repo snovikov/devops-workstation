@@ -5,7 +5,7 @@
       - mysql-client
       - mysql-shell
     state: latest
-    update_cache: true
+    update_cache: True
     cache_valid_time: 3600
 
 - name: Install DBeaver package
@@ -31,7 +31,7 @@
       - libodbc2
       - libproj25
     state: latest
-    update_cache: true
+    update_cache: True
     cache_valid_time: 3600
   when: package_check.rc == 1
 

@@ -5,6 +5,6 @@
       - lm-sensors
       - psensor
     state: latest
-    update_cache: true
+    update_cache: True
     cache_valid_time: 3600
   register: sensor_install
