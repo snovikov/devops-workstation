@@ -1,7 +1,7 @@
 ---
 - name: Add AWS VPN client repository key
   apt_key:
-    id: 0B8B890071C04E08
+    id: 7AC5C2797A29052C
     url: https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc
     keyring: /etc/apt/trusted.gpg.d/awsvpnclient.gpg
     state: present
@@ -16,7 +16,7 @@
 
 - name: Add AWS VPN client repository
   apt_repository:
-    repo: "deb [arch=amd64] https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo ubuntu-20.04 main"
+    repo: "deb [arch=amd64] https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo ubuntu main"
     filename: aws-vpn-client
 
 - name: Install AWS VPN client packages
