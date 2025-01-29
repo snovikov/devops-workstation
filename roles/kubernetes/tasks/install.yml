@@ -1,9 +1,15 @@
 ---
 
+- name: Install kubectl package
+  snap:
+    name: kubectl
+    channel: "{{ kubectl_version }}/stable"
+    classic: True
+    state: present
+
 - name: Install snap packages
   snap:
     name:
-      - kubectl
       - helm
       - kontena-lens
     classic: True
