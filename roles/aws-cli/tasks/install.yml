@@ -71,6 +71,13 @@
     unsafe_perm: True
     state: present
 
+- name: Install "CDK" package
+  npm:
+    name: aws-cdk
+    global: True
+    unsafe_perm: True
+    state: latest
+
 - name: Install aws-iam-authenticator
   get_url:
     url: "https://s3.us-west-2.amazonaws.com/amazon-eks/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2021-07-05/bin/linux/amd64/aws-iam-authenticator"
