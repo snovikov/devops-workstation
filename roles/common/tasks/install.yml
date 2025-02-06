@@ -29,16 +29,11 @@
       - software-properties-common
       - nmap
       - xclip
+      - yamllint
+      - pre-commit
     state: latest
     update_cache: True
     cache_valid_time: 3600
-
-#- name: install pip packages
-#  pip:
-#    name:
-#      - yamllint
-#      - pre-commit
-#    state: latest
 
 - name: Install snap packages
   snap:
