@@ -1,3 +1,3 @@
 ---
-terragrunt_version: "0.73.11"
+terragrunt_version: "0.73.16"
 atlantis_config_version: "1.20.0"
