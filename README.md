@@ -5,7 +5,7 @@ Basic setup for workstation
 ## Requirements
 
 * Ubuntu 24.04 LTS or later
-* Ansible `9.0+`
+* Ansible `9.2+`
 * ansbile collection `ansible.posix 1.5.4+`
 * ansbile collection `community.general 8.3.0+`
 
