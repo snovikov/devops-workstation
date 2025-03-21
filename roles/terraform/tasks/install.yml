@@ -43,3 +43,10 @@
     group: root
     mode: 0755
   when: docs_version_check is failed
+
+- name: Install "cdktf-cli" package
+  npm:
+    name: cdktf-cli
+    global: True
+    unsafe_perm: True
+    state: latest
