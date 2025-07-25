@@ -57,13 +57,6 @@
     cmd: "./install --update"
   when: version_check is failed
 
-- name: Install "aws-azure-login" package
-  npm:
-    name: aws-azure-login
-    global: True
-    unsafe_perm: True
-    state: present
-
 - name: Install "serverless" package
   npm:
     name: serverless

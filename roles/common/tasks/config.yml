@@ -6,5 +6,3 @@
 # PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # HISTSIZE="INFINITE"
 # HISTFILESIZE="INFINITE"
-
-# TODO: add aws-azure-login configuration in .bashrc
