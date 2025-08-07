@@ -15,3 +15,9 @@
     name: npm
     global: True
     state: latest
+
+- name: "Install latest yarn package"
+  npm:
+    name: yarn
+    global: True
+    state: latest
