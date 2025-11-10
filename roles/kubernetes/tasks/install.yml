@@ -11,9 +11,37 @@
   snap:
     name:
       - helm
-      - kontena-lens
     classic: True
     state: present
+
+- name: Download Lens GPG key
+  ansible.builtin.get_url:
+    url: https://downloads.k8slens.dev/keys/gpg
+    dest: /tmp/lens-archive-keyring.gpg
+    mode: '0644'
+
+- name: Dearmor Lens GPG key
+  ansible.builtin.command:
+    cmd: gpg --dearmor -o /usr/share/keyrings/lens-archive-keyring.gpg /tmp/lens-archive-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/lens-archive-keyring.gpg
+
+- name: Add lens APT repository
+  apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main"
+    filename: lens
+    state: present
+    update_cache: True
+
+- name: Install Lens Desktop
+  ansible.builtin.apt:
+    name: lens
+    state: latest
+
+- name: Clean up temporary GPG key file
+  ansible.builtin.file:
+    path: /tmp/lens-archive-keyring.gpg
+    state: absent
 
 - name: "Check k9s installed"
   shell: "k9s version | grep -qPe 'Version:.+{{ k9s_version }}'"
