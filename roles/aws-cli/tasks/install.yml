@@ -71,15 +71,6 @@
     unsafe_perm: True
     state: latest
 
-- name: Install aws-iam-authenticator
-  get_url:
-    url: "https://s3.us-west-2.amazonaws.com/amazon-eks/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2021-07-05/bin/linux/amd64/aws-iam-authenticator"
-    checksum: "sha256:https://s3.us-west-2.amazonaws.com/amazon-eks/{{ AWS_IAM_AUTHENTICATOR_VERSION }}/2021-07-05/bin/linux/amd64/aws-iam-authenticator.sha256"
-    dest: /usr/local/bin/aws-iam-authenticator
-    mode: 0755
-    owner: root
-    group: root
-
 - name: Install Session Manager plugin
   ansible.builtin.apt:
     deb: "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb"
