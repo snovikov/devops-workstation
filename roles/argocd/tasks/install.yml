@@ -1,0 +1,15 @@
+---
+
+- name: "Check argocd cli is installed"
+  shell: "argocd version --client | grep -qPe '^argocd: v{{ argocd_version }}\\+.*$'"
+  register: version_check
+  ignore_errors: True
+  changed_when: False
+
+- name: Download argocd binary
+  get_url:
+    url: "https://github.com/argoproj/argo-cd/releases/download/v{{ argocd_version }}/argocd-linux-amd64"
+    checksum: "sha256:https://github.com/argoproj/argo-cd/releases/download/v{{ argocd_version }}/cli_checksums.txt"
+    dest: "/usr/local/bin/argocd"
+    mode: "0755"
+  when: version_check is failed
