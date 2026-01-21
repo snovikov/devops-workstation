@@ -20,3 +20,4 @@
     - {role: kubernetes, tags: kubernetes}
     - {role: packer, tags: packer}
     - {role: onepassword, tags: onepassword}
+    - {role: argocd, tags: argocd}
