@@ -49,6 +49,6 @@
 
 - name: Install Dropbox
   ansible.builtin.apt:
-    deb: "https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb"
+    deb: "https://linux.dropbox.com/packages/ubuntu/dropbox_2025.05.20_amd64.deb"
     state: present
     update_cache: False
