@@ -1,4 +1,4 @@
 ---
-kubectl_version: "1.35"
+kubectl_version: "1.36"
 k9s_version: "0.51.0"
 popeye_version: "0.22.1"

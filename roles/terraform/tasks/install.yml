@@ -48,5 +48,4 @@
   npm:
     name: cdktf-cli
     global: True
-    unsafe_perm: True
     state: latest
