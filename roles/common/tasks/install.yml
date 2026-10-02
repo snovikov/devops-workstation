@@ -14,7 +14,7 @@
       - python3-openshift
       - python3-pytest
       - python3-virtualenv
-      - openjdk-21-jdk
+      - openjdk-25-jdk
       - keepassx
       - geany
       - git
@@ -43,7 +43,6 @@
       - go
       - pycharm-community
       - slack
-      - skype
     classic: True
     state: present
 
