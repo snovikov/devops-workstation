@@ -57,9 +57,10 @@
     cmd: "./install --update"
   when: version_check is failed
 
-- name: Install "serverless" package
+- name: Install "Open Serverless" package
   npm:
-    name: serverless
+    name: osls
+    version: "{{ osls_version }}"
     global: True
     state: present
 
